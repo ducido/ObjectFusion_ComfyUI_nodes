@@ -11,11 +11,13 @@ Here, I introduce a complete pipeline that takes two images as input, allowing y
 - Optimized integration with ComfyUI.
   
 ## 🖼️ Some Examples
+
+![Example 2](https://github.com/user-attachments/assets/73877129-01b4-4197-a62c-d891ad02b760)
+
 <details>
   <summary>Click to expand/collapse</summary>
   
 ![Example 1](https://github.com/user-attachments/assets/68d2c121-45a4-4c47-a02e-17d2e96ec84c)
-![Example 2](https://github.com/user-attachments/assets/73877129-01b4-4197-a62c-d891ad02b760)
 ![Example 3](https://github.com/user-attachments/assets/285f74ae-0320-4a8b-831d-1ef8d4d201fb)
 ![Example 4](https://github.com/user-attachments/assets/ad6d4e41-343d-4b4b-bb15-175bf71e9c13)
 
