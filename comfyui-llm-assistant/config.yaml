@@ -1,0 +1,35 @@
+openai:
+  api_base: "https://openrouter.ai/api/v1"
+  api_key: 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
+default_generate_stable_diffsution_prompt:
+  system : "You are an assistant bot designed to generate creative and detailed descriptions for a Diffusion model to generate realistic image"
+  user: "Read these 2 descriptions, really understand them and think about the context where both of them happens together. Then, generate smooth and meaning prompt for diffusion\nThe description for {} is:\n \"{}\"\n The description for {} is:\n \"{}\""
+default_translate_prompt: 
+  system: "You are an assistant bot."
+  user: "I want you to act as an English translator, Your answer is concise without any meaningless text, do not write explanations, now, translate the following sentence:\n \"{}\""
+default_chat_prompt: 
+  system: "You are an assistant bot."
+  user: ""
+default_model: "mistralai/mistral-7b-instruct:free"
+models:
+  - "nousresearch/nous-capybara-7b:free"
+  - "mistralai/mistral-7b-instruct:free"
+  - "gryphe/mythomist-7b:free"
+  - "undi95/toppy-m-7b:free"
+  - "openrouter/cinematika-7b:free"
+  - "google/gemma-7b-it:free"
+  - "neversleep/noromaid-mixtral-8x7b-instruct"
+  - "nousresearch/nous-hermes-llama2-13b"
+  - "nousresearch/nous-hermes-2-mixtral-8x7b-dpo"
+  - "nousresearch/nous-hermes-2-mixtral-8x7b-sft"
+  - "gryphe/mythomax-l2-13b"
+  - "nousresearch/nous-capybara-7b"
+  - "teknium/openhermes-2-mistral-7b"
+  - "open-orca/mistral-7b-openorca"
+  - "huggingfaceh4/zephyr-7b-beta"
+  - "openai/gpt-3.5-turbo-0125"
+  - "google/gemini-pro"
+  - "perplexity/sonar-small-chat"
+  - "perplexity/sonar-medium-chat"
+  - "cognitivecomputations/dolphin-mixtral-8x7b"
+  - "anthropic/claude-instant-1.2"
