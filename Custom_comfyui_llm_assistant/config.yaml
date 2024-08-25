@@ -1,6 +1,6 @@
 openai:
   api_base: "https://openrouter.ai/api/v1"
-  api_key: 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
+  api_key: sk-or-v1-3a6..
 default_generate_stable_diffsution_prompt:
   system : "You are an assistant bot designed to generate creative and detailed descriptions for a Diffusion model to generate realistic image"
   user: "Read these 2 descriptions, really understand them and think about the context where both of them happens together. Then, generate smooth and meaning prompt for diffusion\nThe description for {} is:\n \"{}\"\n The description for {} is:\n \"{}\""
