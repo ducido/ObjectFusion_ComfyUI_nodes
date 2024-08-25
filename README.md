@@ -32,7 +32,9 @@ Here, I introduce a complete pipeline that takes two images as input, allowing y
 
 2. Install the required packages:
     ```bash
-    pip install -r myreqs.txt
+    conda create -n objectfusion python=3.10 -y
+    conda activate objectfusion
+    pip install -r requirements.txt
     ```
 
 3. Clone these amazing repositories and follow their instructions:
