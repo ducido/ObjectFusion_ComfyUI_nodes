@@ -51,7 +51,6 @@ _All the folders, except `CROP_OBJECT`, are from other repositories. However, I 
 - **[comfyui-llm-assistant](https://github.com/longgui0318/comfyui-llm-assistant)**
   - Removed input field: `prompt`.
   - Added 4 input fields: `object1`, `desc_obj1`, `object2`, `desc_obj2`.
-  - Change all `default` value to `""` because the newest frontend of ComfyUI do not accept `None`
 
 ## 🤝 Contributing
 Contributions are welcome! Please open an issue or submit a pull request.

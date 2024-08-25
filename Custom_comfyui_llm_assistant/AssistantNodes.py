@@ -64,12 +64,12 @@ class GenerateStableDiffsutionPromptLLM:
                 "stop": ("STRING", {
                     "dynamicPrompts": False,
                     "multiline": False,
-                    "default": None
+                    "default": ""
                 }),
                 "response_pattern": ("STRING", {
                     "dynamicPrompts": False,
                     "multiline": False,
-                    "default": None
+                    "default": ""
                 }),
                 "temperature": ("FLOAT", {
                     "default": 1.0,
@@ -98,7 +98,7 @@ class GenerateStableDiffsutionPromptLLM:
 
     FUNCTION = "generateStableDiffsutionPrompt"
 
-    CATEGORY = "cropcropcropcrop"
+    CATEGORY = "LLM"
 
     def generateStableDiffsutionPrompt(self, object1, desc_obj1, object2, desc_obj2 ,template_system, template_user, stop, response_pattern,  temperature, max_tokens, model_name):
         config = load_config()
@@ -170,12 +170,12 @@ class TranslateTextLLM:
                 "stop": ("STRING", {
                     "dynamicPrompts": False,
                     "multiline": False,
-                    "default": None
+                    "default": ""
                 }),
                 "response_pattern": ("STRING", {
                     "dynamicPrompts": False,
                     "multiline": False,
-                    "default": None
+                    "default": ""
                 }),
                 "temperature": ("FLOAT", {
                     "default": 1.0,
@@ -274,12 +274,12 @@ class ChatWithLLM:
                 "stop": ("STRING", {
                     "dynamicPrompts": False,
                     "multiline": False,
-                    "default": None
+                    "default": ""
                 }),
                 "response_pattern": ("STRING", {
                     "dynamicPrompts": False,
                     "multiline": False,
-                    "default": None
+                    "default": ""
                 }),
                 "temperature": ("FLOAT", {
                     "default": 1.0,
@@ -329,12 +329,12 @@ class ChatWithLLM:
 
 NODE_CLASS_MAPPINGS = {
     "Generate Stable Diffsution Prompt With LLM duci": GenerateStableDiffsutionPromptLLM,
-    # "Translate Text With LLM": TranslateTextLLM,
-    # "Chat With LLM": ChatWithLLM,
+    "Translate Text With LLM": TranslateTextLLM,
+    "Chat With LLM": ChatWithLLM,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "Generate Stable Diffsution Prompt With LLM duci": "HUHU",
-    # "Translate Text With LLM": "Translate Text With LLM",
-    # "Chat With LLM": "Chat With LLM",
+    "Generate Stable Diffsution Prompt With LLM duci": "Custom Generate Stable Diffsution Prompt With LLM",
+    "Translate Text With LLM": "Translate Text With LLM",
+    "Chat With LLM": "Chat With LLM",
 }
