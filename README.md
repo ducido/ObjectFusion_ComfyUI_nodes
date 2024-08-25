@@ -27,7 +27,7 @@ Here, I introduce a complete pipeline that takes two images as input, allowing y
 
 1. Clone this repo into the `custom_nodes` directory in [ComfyUI](https://github.com/comfyanonymous/ComfyUI):
     ```bash
-    git clone https://github.com/your-repo/custom_nodes
+    git clone https://github.com/ducido/ObjectFusion_ComfyUI_nodes
     ```
 
 2. Install the required packages:
