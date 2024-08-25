@@ -129,7 +129,7 @@ class Yoloworld_ESAM_Zho:
     RETURN_TYPES = ("IMAGE", "MASK", "STRING", "STRING")
     RETURN_NAMES = ("IMAGE", "MASK", "BBOX", "CATEGORIES")
     FUNCTION = "yoloworld_esam_image"
-    CATEGORY = "🔎YOLOWORLD_ESAM"
+    CATEGORY = "🔎YOLOWORLD_ESAM_DUCI"
                        
     def yoloworld_esam_image(self, image, yolo_world_model, esam_model, categories, confidence_threshold, iou_threshold, box_thickness, text_thickness, text_scale, with_segmentation, mask_combined, with_confidence, with_class_agnostic_nms, mask_extracted, mask_extracted_index):
         categories = process_categories(categories)
