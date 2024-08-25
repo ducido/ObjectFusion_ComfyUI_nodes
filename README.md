@@ -40,8 +40,7 @@ Here, I introduce a complete pipeline that takes two images as input, allowing y
     conda create -n objectfusion python=3.10 -y
     conda activate objectfusion
     pip install -r requirements.txt
-    cd ObjectFusion_ComfyUI_nodes/Custom_ComfyUI_YoloWorld_EfficientSAM
-    wget https://huggingface.co/camenduru/YoloWorld-EfficientSAM/resolve/main/efficient_sam_s_gpu.jit
+    wget https://huggingface.co/camenduru/YoloWorld-EfficientSAM/resolve/main/efficient_sam_s_gpu.jit -P ObjectFusion_ComfyUI_nodes/Custom_ComfyUI_YoloWorld_EfficientSAM
     ```
 
 ## 📌 Note
