@@ -22,7 +22,7 @@ rich
 safetensors
 scipy
 sentencepiece
-skimage
+scikit-image
 spandrel
 spandrel_extra_arches
 supervision

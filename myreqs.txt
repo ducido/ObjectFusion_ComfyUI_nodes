@@ -22,7 +22,7 @@ rich==13.7.1
 safetensors==0.4.4
 scipy==1.14.1
 sentencepiece==0.2.0
-skimage==0.0
+scikit-image=0.24.0
 spandrel==0.3.4
 spandrel_extra_arches==0.1.1
 supervision==0.22.0
