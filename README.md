@@ -42,6 +42,8 @@ Here, I introduce a complete pipeline that takes two images as input, allowing y
     conda activate objectfusion
     pip install -r requirements.txt
     cp `tensor_img_utils.py` img2txt-comfyui-nodes/src
+    cd ObjectFusion_ComfyUI_nodes/Custom_ComfyUI_YoloWorld_EfficientSAM
+    wget https://huggingface.co/camenduru/YoloWorld-EfficientSAM/resolve/main/efficient_sam_s_gpu.jit
     ```
 
 ## 📌 Note
