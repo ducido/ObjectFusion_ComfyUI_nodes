@@ -1,0 +1,1443 @@
+{
+  "last_node_id": 102,
+  "last_link_id": 161,
+  "nodes": [
+    {
+      "id": 79,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        2497.118442449664,
+        498.9760673694416
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            108
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            148
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            115
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "sd3_medium_incl_clips_t5xxlfp8.safetensors"
+      ]
+    },
+    {
+      "id": 81,
+      "type": "CLIPTextEncode",
+      "pos": [
+        3153.118442449664,
+        928.9760673694418
+      ],
+      "size": {
+        "0": 425.27801513671875,
+        "1": 180.6060791015625
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 147
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            110
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "disfigured, ugly, anime, 3D, painting, scrupture, text, watermark"
+      ]
+    },
+    {
+      "id": 80,
+      "type": "CLIPTextEncode",
+      "pos": [
+        2659.118442449664,
+        939.9760673694418
+      ],
+      "size": {
+        "0": 422.84503173828125,
+        "1": 164.31304931640625
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 146
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 160,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            109
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "The cup is adorned with a charming tableau of a brown and white dog standing on a sidewalk, exuding joy with a smile on its face. The dog is depicted wearing a vibrant purple collar accented with a green tag, adding a pop of color to the scene. Its well-groomed fur and content expression convey a sense of care and happiness. This artistic prompt brings a delightful touch of canine companionship to the cup, portraying a heartwarming moment frozen in time."
+      ]
+    },
+    {
+      "id": 98,
+      "type": "Reroute",
+      "pos": [
+        2937.118442449664,
+        663.9760673694418
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 148
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "CLIP",
+          "links": [
+            146,
+            147
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 82,
+      "type": "VAEDecode",
+      "pos": [
+        3901.118442449664,
+        538.9760673694417
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 114
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 115
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            117
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 68,
+      "type": "ObjectCrop",
+      "pos": [
+        932.7827605711261,
+        212.9760597400472
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Original_image",
+          "type": "IMAGE",
+          "link": 139
+        },
+        {
+          "name": "BBOX",
+          "type": "STRING",
+          "link": 97,
+          "widget": {
+            "name": "BBOX"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Chosen_Obj",
+          "type": "IMAGE",
+          "links": [
+            122,
+            150
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ObjectCrop"
+      },
+      "widgets_values": [
+        0,
+        ""
+      ]
+    },
+    {
+      "id": 56,
+      "type": "ObjectCrop",
+      "pos": [
+        946.3164270830615,
+        914.7456938304075
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Original_image",
+          "type": "IMAGE",
+          "link": 142
+        },
+        {
+          "name": "BBOX",
+          "type": "STRING",
+          "link": 81,
+          "widget": {
+            "name": "BBOX"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Chosen_Obj",
+          "type": "IMAGE",
+          "links": [
+            83,
+            151
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ObjectCrop"
+      },
+      "widgets_values": [
+        0,
+        ""
+      ]
+    },
+    {
+      "id": 100,
+      "type": "PreviewImage",
+      "pos": [
+        954.3164270830617,
+        1154.7456938304088
+      ],
+      "size": {
+        "0": 381.0682067871094,
+        "1": 258.7750549316406
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 151
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 99,
+      "type": "PreviewImage",
+      "pos": [
+        942.7827605711261,
+        456.9760597400472
+      ],
+      "size": {
+        "0": 379.666015625,
+        "1": 267.19915771484375
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 150
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 101,
+      "type": "Generate Stable Diffsution Prompt With LLM",
+      "pos": [
+        1979.9504489225067,
+        603.1445796954305
+      ],
+      "size": {
+        "0": 400,
+        "1": 446
+      },
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "object1",
+          "type": "STRING",
+          "link": 156,
+          "widget": {
+            "name": "object1"
+          }
+        },
+        {
+          "name": "object2",
+          "type": "STRING",
+          "link": 157,
+          "widget": {
+            "name": "object2"
+          }
+        },
+        {
+          "name": "desc_obj1",
+          "type": "STRING",
+          "link": 158,
+          "widget": {
+            "name": "desc_obj1"
+          }
+        },
+        {
+          "name": "desc_obj2",
+          "type": "STRING",
+          "link": 159,
+          "widget": {
+            "name": "desc_obj2"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "stable diffsution prompt",
+          "type": "STRING",
+          "links": [
+            160
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Generate Stable Diffsution Prompt With LLM"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "",
+        "",
+        "You are an assistant bot designed to generate creative and detailed descriptions for a Diffusion model to generate realistic image",
+        "Read these 2 descriptions, really understand them and think about the context where both of them happens together. Then, generate smooth and meaning prompt for diffusion\nThe description for {} is:\n \"{}\"\n The description for {} is:\n \"{}\"",
+        "",
+        "",
+        1,
+        300,
+        "mistralai/mistral-7b-instruct:free"
+      ]
+    },
+    {
+      "id": 97,
+      "type": "Reroute",
+      "pos": [
+        322,
+        980
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 140
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            141,
+            142
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 67,
+      "type": "ESAM_ModelLoader_Zho",
+      "pos": [
+        -115,
+        807
+      ],
+      "size": {
+        "0": 250,
+        "1": 80
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "esam_model",
+          "type": "ESAMMODEL",
+          "links": [
+            143
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ESAM_ModelLoader_Zho"
+      },
+      "widgets_values": [
+        "CUDA"
+      ]
+    },
+    {
+      "id": 95,
+      "type": "Reroute",
+      "pos": [
+        167,
+        808
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 143
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "ESAMMODEL",
+          "links": [
+            135,
+            136
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 94,
+      "type": "Reroute",
+      "pos": [
+        186,
+        688
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 161
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "YOLOWORLDMODEL",
+          "links": [
+            132,
+            133
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 96,
+      "type": "Reroute",
+      "pos": [
+        310,
+        134
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 144
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            138,
+            139
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 64,
+      "type": "LoadImage",
+      "pos": [
+        -287,
+        69
+      ],
+      "size": [
+        575.8929198243384,
+        583.698507518247
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            144
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "manycups.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 51,
+      "type": "LoadImage",
+      "pos": [
+        -294,
+        975
+      ],
+      "size": {
+        "0": 591.8458251953125,
+        "1": 703.8153686523438
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            140
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "bus.jpeg",
+        "image"
+      ]
+    },
+    {
+      "id": 65,
+      "type": "Yoloworld_ModelLoader_Zho",
+      "pos": [
+        -123,
+        687
+      ],
+      "size": {
+        "0": 250,
+        "1": 80
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "yolo_world_model",
+          "type": "YOLOWORLDMODEL",
+          "links": [
+            161
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Yoloworld_ModelLoader_Zho"
+      },
+      "widgets_values": [
+        "yolo_world/l"
+      ]
+    },
+    {
+      "id": 84,
+      "type": "PreviewImage",
+      "pos": [
+        3672,
+        635
+      ],
+      "size": [
+        474.6462684690068,
+        402.3494239092297
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 117
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 85,
+      "type": "EmptyLatentImage",
+      "pos": [
+        2500.118442449664,
+        340.9760673694416
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            130
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ]
+    },
+    {
+      "id": 52,
+      "type": "Yoloworld_ESAM_Zho",
+      "pos": [
+        510.2162860343707,
+        920.2652267603027
+      ],
+      "size": {
+        "0": 416.34600830078125,
+        "1": 419.03369140625
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "yolo_world_model",
+          "type": "YOLOWORLDMODEL",
+          "link": 133
+        },
+        {
+          "name": "esam_model",
+          "type": "ESAMMODEL",
+          "link": 136,
+          "slot_index": 1
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 141,
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "BBOX",
+          "type": "STRING",
+          "links": [
+            81
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "CATEGORIES",
+          "type": "STRING",
+          "links": [
+            157
+          ],
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Yoloworld_ESAM_Zho"
+      },
+      "widgets_values": [
+        "bus",
+        0.01,
+        0.6,
+        2,
+        2,
+        1,
+        true,
+        false,
+        false,
+        false,
+        false,
+        0
+      ]
+    },
+    {
+      "id": 78,
+      "type": "KSampler",
+      "pos": [
+        3530,
+        239
+      ],
+      "size": {
+        "0": 335.6715087890625,
+        "1": 275.1487121582031
+      },
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 108
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 109
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 110
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 130,
+          "slot_index": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            114
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        648274518118444,
+        "randomize",
+        35,
+        8,
+        "dpmpp_2m",
+        "normal",
+        1
+      ]
+    },
+    {
+      "id": 74,
+      "type": "Yoloworld_ESAM_Zho",
+      "pos": [
+        526.7827605711261,
+        208.9760597400472
+      ],
+      "size": {
+        "0": 400,
+        "1": 400
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "yolo_world_model",
+          "type": "YOLOWORLDMODEL",
+          "link": 132
+        },
+        {
+          "name": "esam_model",
+          "type": "ESAMMODEL",
+          "link": 135
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 138
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "BBOX",
+          "type": "STRING",
+          "links": [
+            97
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "CATEGORIES",
+          "type": "STRING",
+          "links": [
+            156
+          ],
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Yoloworld_ESAM_Zho"
+      },
+      "widgets_values": [
+        "cup in the middle",
+        0.01,
+        0.6,
+        2,
+        2,
+        1,
+        true,
+        false,
+        false,
+        false,
+        false,
+        0
+      ]
+    },
+    {
+      "id": 88,
+      "type": "img2txt BLIP/Llava Multimodel Tagger",
+      "pos": [
+        1354.7827605711268,
+        222.9760597400472
+      ],
+      "size": {
+        "0": 430,
+        "1": 490
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input_image",
+          "type": "IMAGE",
+          "link": 122
+        }
+      ],
+      "outputs": [
+        {
+          "name": "caption",
+          "type": "STRING",
+          "links": [
+            158
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "img2txt BLIP/Llava Multimodel Tagger"
+      },
+      "widgets_values": [
+        false,
+        true,
+        false,
+        false,
+        "",
+        "Describe in detail the object shown in the image, focusing exclusively on its physical attributes, colors, and any visible accessories",
+        0.8300000000000001,
+        1.2,
+        36,
+        274,
+        5,
+        "",
+        "The image features a blue cup sitting on a table. The cup is made of ceramic material and has a smooth, curved surface. The cup is placed on a white plate, which is also visible in the scene. The blue color of the cup contrasts with the white plate, creating a visually appealing presentation, </s>, "
+      ]
+    },
+    {
+      "id": 58,
+      "type": "img2txt BLIP/Llava Multimodel Tagger",
+      "pos": [
+        1361.3164270830612,
+        918.7456938304077
+      ],
+      "size": {
+        "0": 430,
+        "1": 490
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input_image",
+          "type": "IMAGE",
+          "link": 83
+        }
+      ],
+      "outputs": [
+        {
+          "name": "caption",
+          "type": "STRING",
+          "links": [
+            159
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "img2txt BLIP/Llava Multimodel Tagger"
+      },
+      "widgets_values": [
+        false,
+        true,
+        false,
+        false,
+        "",
+        "Describe in detail the object shown in the image, focusing exclusively on its physical attributes, colors, and any visible accessories",
+        0.75,
+        1.2,
+        99,
+        256,
+        5,
+        "",
+        "The image features a large white bus with blue stripes on its side. The bus is parked on the side of the road, and it appears to be a tour bus. The bus has multiple rows of seats, providing ample space for passengers. The blue stripes on the bus add a touch of color to the otherwise white vehicle, </s>, "
+      ]
+    }
+  ],
+  "links": [
+    [
+      81,
+      52,
+      2,
+      56,
+      1,
+      "STRING"
+    ],
+    [
+      83,
+      56,
+      0,
+      58,
+      0,
+      "IMAGE"
+    ],
+    [
+      97,
+      74,
+      2,
+      68,
+      1,
+      "STRING"
+    ],
+    [
+      108,
+      79,
+      0,
+      78,
+      0,
+      "MODEL"
+    ],
+    [
+      109,
+      80,
+      0,
+      78,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      110,
+      81,
+      0,
+      78,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      114,
+      78,
+      0,
+      82,
+      0,
+      "LATENT"
+    ],
+    [
+      115,
+      79,
+      2,
+      82,
+      1,
+      "VAE"
+    ],
+    [
+      117,
+      82,
+      0,
+      84,
+      0,
+      "IMAGE"
+    ],
+    [
+      122,
+      68,
+      0,
+      88,
+      0,
+      "IMAGE"
+    ],
+    [
+      130,
+      85,
+      0,
+      78,
+      3,
+      "LATENT"
+    ],
+    [
+      132,
+      94,
+      0,
+      74,
+      0,
+      "YOLOWORLDMODEL"
+    ],
+    [
+      133,
+      94,
+      0,
+      52,
+      0,
+      "YOLOWORLDMODEL"
+    ],
+    [
+      135,
+      95,
+      0,
+      74,
+      1,
+      "ESAMMODEL"
+    ],
+    [
+      136,
+      95,
+      0,
+      52,
+      1,
+      "ESAMMODEL"
+    ],
+    [
+      138,
+      96,
+      0,
+      74,
+      2,
+      "IMAGE"
+    ],
+    [
+      139,
+      96,
+      0,
+      68,
+      0,
+      "IMAGE"
+    ],
+    [
+      140,
+      51,
+      0,
+      97,
+      0,
+      "*"
+    ],
+    [
+      141,
+      97,
+      0,
+      52,
+      2,
+      "IMAGE"
+    ],
+    [
+      142,
+      97,
+      0,
+      56,
+      0,
+      "IMAGE"
+    ],
+    [
+      143,
+      67,
+      0,
+      95,
+      0,
+      "*"
+    ],
+    [
+      144,
+      64,
+      0,
+      96,
+      0,
+      "*"
+    ],
+    [
+      146,
+      98,
+      0,
+      80,
+      0,
+      "CLIP"
+    ],
+    [
+      147,
+      98,
+      0,
+      81,
+      0,
+      "CLIP"
+    ],
+    [
+      148,
+      79,
+      1,
+      98,
+      0,
+      "*"
+    ],
+    [
+      150,
+      68,
+      0,
+      99,
+      0,
+      "IMAGE"
+    ],
+    [
+      151,
+      56,
+      0,
+      100,
+      0,
+      "IMAGE"
+    ],
+    [
+      156,
+      74,
+      3,
+      101,
+      0,
+      "STRING"
+    ],
+    [
+      157,
+      52,
+      3,
+      101,
+      1,
+      "STRING"
+    ],
+    [
+      158,
+      88,
+      0,
+      101,
+      2,
+      "STRING"
+    ],
+    [
+      159,
+      58,
+      0,
+      101,
+      3,
+      "STRING"
+    ],
+    [
+      160,
+      101,
+      0,
+      80,
+      1,
+      "STRING"
+    ],
+    [
+      161,
+      65,
+      0,
+      94,
+      0,
+      "*"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Diffusion",
+      "bounding": [
+        2489,
+        182,
+        1708,
+        926
+      ],
+      "color": "#b06634",
+      "font_size": 70,
+      "locked": false
+    },
+    {
+      "title": "Get description for object 1",
+      "bounding": [
+        448,
+        77,
+        1409,
+        692
+      ],
+      "color": "#a1309b",
+      "font_size": 70,
+      "locked": false
+    },
+    {
+      "title": "Get description for object 2",
+      "bounding": [
+        439,
+        777,
+        1413,
+        688
+      ],
+      "color": "#a1309b",
+      "font_size": 70,
+      "locked": false
+    },
+    {
+      "title": "Generate prompt",
+      "bounding": [
+        1875,
+        438,
+        585,
+        639
+      ],
+      "color": "#b58b2a",
+      "font_size": 70,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.2853116706110091,
+      "offset": {
+        "0": 558.0238902393447,
+        "1": 400.39068906211764
+      }
+    }
+  },
+  "version": 0.4
+}

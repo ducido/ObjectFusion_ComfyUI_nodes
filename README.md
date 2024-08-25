@@ -1,7 +1,7 @@
 # 🎨 Object Fusion Pipeline
 
 ## 🌟 Motivation
-Have you ever wanted different objects from different photos to appear in one scene? Manually prompting for Diffusion can be time-consuming as it requires describing the details (shape, color, textual features) of the objects. Alternatively, using GPT to describe the object for us involves multiple steps.
+Have you ever fantasized about crafting a single masterpiece from elements of different photos? 😲 What if I told you that manually prompting each object's shape, color, and features for diffusion could be a thing of the past? And let’s be real, using GPT to describe each object step by step can feel like chasing an AI in slow motion. 🐢💤
 
 Here, I introduce a complete pipeline that takes two images as input, allowing you to choose which objects from the images you want to fuse seamlessly.
 
