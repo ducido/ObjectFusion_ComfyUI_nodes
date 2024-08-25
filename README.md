@@ -32,7 +32,7 @@ Here, I introduce a complete pipeline that takes two images as input, allowing y
 
 2. Install the required packages:
     ```bash
-    pip install -r myreqs.txt
+    pip install -r requirements.txt
     ```
 
 3. Clone these amazing repositories and follow their instructions:
