@@ -33,7 +33,6 @@ Here, I introduce a complete pipeline that takes two images as input, allowing y
 3. Clone these amazing repositories and follow their instructions:
     - [ComfyUI-SD3-nodes](https://github.com/liusida/ComfyUI-SD3-nodes)  
       _Note: Place the 3 clips model into `models/clip`._
-    - [img2txt-comfyui-nodes](https://github.com/christian-byrne/img2txt-comfyui-nodes)
     - [ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts)
       
 4. Install the required packages:
@@ -41,7 +40,6 @@ Here, I introduce a complete pipeline that takes two images as input, allowing y
     conda create -n objectfusion python=3.10 -y
     conda activate objectfusion
     pip install -r requirements.txt
-    cp `tensor_img_utils.py` img2txt-comfyui-nodes/src
     cd ObjectFusion_ComfyUI_nodes/Custom_ComfyUI_YoloWorld_EfficientSAM
     wget https://huggingface.co/camenduru/YoloWorld-EfficientSAM/resolve/main/efficient_sam_s_gpu.jit
     ```
@@ -56,7 +54,12 @@ _All the folders, except `CROP_OBJECT`, are from other repositories. However, I 
 - **[comfyui-llm-assistant](https://github.com/longgui0318/comfyui-llm-assistant)**
   - Removed input field: `prompt`.
   - Added 4 input fields: `object1`, `desc_obj1`, `object2`, `desc_obj2`.
-  - Change all `default` value to `""` because the newest frontend of ComfyUI do not accept `None`
+  - Change all `default` value to `""` because the newest frontend of ComfyUI consider `None` value as a bug
+    
+- **[img2txt-comfyui-nodes](https://github.com/christian-byrne/img2txt-comfyui-nodes)**
+  - Add file `tensor_img_utils.py` in `src`
+  - Fix bug `import` part in `src/img2txt_node.py`
+  
 
 ## 🤝 Contributing
 Contributions are welcome! Please open an issue or submit a pull request.
