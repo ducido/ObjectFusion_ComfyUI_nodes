@@ -29,19 +29,20 @@ Here, I introduce a complete pipeline that takes two images as input, allowing y
     ```bash
     git clone https://github.com/ducido/ObjectFusion_ComfyUI_nodes
     ```
-
-2. Install the required packages:
-    ```bash
-    conda create -n objectfusion python=3.10 -y
-    conda activate objectfusion
-    pip install -r requirements.txt
-    ```
-
+    
 3. Clone these amazing repositories and follow their instructions:
     - [ComfyUI-SD3-nodes](https://github.com/liusida/ComfyUI-SD3-nodes)  
       _Note: Place the 3 clips model into `models/clip`._
     - [img2txt-comfyui-nodes](https://github.com/christian-byrne/img2txt-comfyui-nodes)
     - [ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts)
+      
+4. Install the required packages:
+    ```bash
+    conda create -n objectfusion python=3.10 -y
+    conda activate objectfusion
+    pip install -r requirements.txt
+    cp `tensor_img_utils.py` img2txt-comfyui-nodes/src
+    ```
 
 ## 📌 Note
 _All the folders, except `CROP_OBJECT`, are from other repositories. However, I have made some minor modifications to fit this project. Here are the details:_
