@@ -34,6 +34,7 @@ Here, I introduce a complete pipeline that takes two images as input, allowing y
     - [ComfyUI-SD3-nodes](https://github.com/liusida/ComfyUI-SD3-nodes)  
       _Note: Place the 3 clips model into `models/clip`._
     - [ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts)
+    - [img2txt-comfyui-nodes](https://github.com/christian-byrne/img2txt-comfyui-nodes)
       
 4. Install the required packages:
     ```bash
@@ -54,10 +55,6 @@ _All the folders, except `CROP_OBJECT`, are from other repositories. However, I 
   - Removed input field: `prompt`.
   - Added 4 input fields: `object1`, `desc_obj1`, `object2`, `desc_obj2`.
   - Change all `default` value to `""` because the newest frontend of ComfyUI consider `None` value as a bug
-    
-- **[img2txt-comfyui-nodes](https://github.com/christian-byrne/img2txt-comfyui-nodes)**
-  - Add file `tensor_img_utils.py` in `src`
-  - Fix bug `import` part in `src/img2txt_node.py`
   
 
 ## 🤝 Contributing
