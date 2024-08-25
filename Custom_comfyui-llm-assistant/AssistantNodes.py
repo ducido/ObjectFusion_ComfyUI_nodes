@@ -337,7 +337,7 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "Generate Stable Diffsution Prompt With LLM": "Generate Stable Diffsution Prompt With LLM",
+    "Generate Stable Diffsution Prompt With LLM": "Custom Generate Stable Diffsution Prompt With LLM",
     "Translate Text With LLM": "Translate Text With LLM",
     "Chat With LLM": "Chat With LLM",
 }
