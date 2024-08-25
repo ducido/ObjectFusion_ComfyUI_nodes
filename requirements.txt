@@ -25,3 +25,5 @@ ultralytics==8.2.78
 websocket_client==1.8.0
 xformers==0.0.27.post2
 inference-gpu[yolo-world]==0.16.2
+bitsandbytes==0.43.3
+accelerate==0.33.0
