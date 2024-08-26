@@ -43,7 +43,7 @@ Here, I introduce a complete pipeline that takes two images as input, allowing y
     pip install -r custom_nodes/ObjectFusion_ComfyUI_nodes/requirements.txt
     wget https://huggingface.co/camenduru/YoloWorld-EfficientSAM/resolve/main/efficient_sam_s_gpu.jit -P custom_nodes/ObjectFusion_ComfyUI_nodes/Custom_ComfyUI_YoloWorld_EfficientSAM
     ```
-5. Or you can install with `[ComfyUI-Manager]([url](https://github.com/ltdrdata/ComfyUI-Manager))` which is much easiera and faster.
+5. Or you can install with [ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager) which is much easier and faster.
 
 ## 📌 Note
 _All the folders, except `CROP_OBJECT`, are from other repositories. Thank you for your amazing works, I appreciate that. Besides, I have made some minor modifications to fit this project. Here are the details:_
