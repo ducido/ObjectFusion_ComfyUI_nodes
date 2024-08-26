@@ -210,7 +210,7 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "Yoloworld_ModelLoader_Zho": "🔎Yoloworld Model Loader",
-    "ESAM_ModelLoader_Zho": "🔎ESAM Model Loader",
+    "Yoloworld_ModelLoader_Zho": "🔎Custom Yoloworld Model Loader",
+    "ESAM_ModelLoader_Zho": "🔎Custom ESAM Model Loader",
     "Yoloworld_ESAM_Zho": "🔎Custom Yoloworld ESAM",
 }
