@@ -45,7 +45,7 @@ Here, I introduce a complete pipeline that takes two images as input, allowing y
     ```
 
 ## 📌 Note
-_All the folders, except `CROP_OBJECT`, are from other repositories. However, I have made some minor modifications to fit this project. Here are the details:_
+_All the folders, except `CROP_OBJECT`, are from other repositories. Thank you for your amazing works, I appreciate that. Besides, I have made some minor modifications to fit this project. Here are the details:_
 
 - **[Custom_ComfyUI-YoloWorld-EfficientSAM](https://github.com/ZHO-ZHO-ZHO/ComfyUI-YoloWorld-EfficientSAM)**
   - Added 2 output fields: `BBOX`, `categories`.
