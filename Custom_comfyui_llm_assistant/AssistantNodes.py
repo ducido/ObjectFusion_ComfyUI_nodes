@@ -119,9 +119,9 @@ class GenerateStableDiffsutionPromptLLM:
 
 
 NODE_CLASS_MAPPINGS = {
-    "Generate Stable Diffsution Prompt With LLM duci": GenerateStableDiffsutionPromptLLM,
+    "Custom Generate Stable Diffsution Prompt With LLM": GenerateStableDiffsutionPromptLLM,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "Generate Stable Diffsution Prompt With LLM duci": "Custom Generate Stable Diffsution Prompt With LLM",
+    "Custom Generate Stable Diffsution Prompt With LLM": "Custom Generate Stable Diffsution Prompt With LLM",
 }

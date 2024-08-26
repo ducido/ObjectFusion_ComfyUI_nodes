@@ -204,13 +204,13 @@ class Yoloworld_ESAM_Zho:
 
 
 NODE_CLASS_MAPPINGS = {
-    "Yoloworld_ModelLoader_Zho": Yoloworld_ModelLoader_Zho,
-    "ESAM_ModelLoader_Zho": ESAM_ModelLoader_Zho,
-    "Yoloworld_ESAM_Zho": Yoloworld_ESAM_Zho,
+    "Custom Yoloworld_ModelLoader_Zho": Yoloworld_ModelLoader_Zho,
+    "Custom ESAM_ModelLoader_Zho": ESAM_ModelLoader_Zho,
+    "Custom Yoloworld_ESAM_Zho": Yoloworld_ESAM_Zho,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "Yoloworld_ModelLoader_Zho": "🔎Custom Yoloworld Model Loader",
-    "ESAM_ModelLoader_Zho": "🔎Custom ESAM Model Loader",
-    "Yoloworld_ESAM_Zho": "🔎Custom Yoloworld ESAM",
+    "Custom Yoloworld_ModelLoader_Zho": "🔎Custom Yoloworld Model Loader",
+    "Custom ESAM_ModelLoader_Zho": "🔎Custom ESAM Model Loader",
+    "Custom Yoloworld_ESAM_Zho": "🔎Custom Yoloworld ESAM",
 }
