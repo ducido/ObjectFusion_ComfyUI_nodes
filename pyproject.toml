@@ -10,6 +10,6 @@ Repository = "https://github.com/ducido/ObjectFusion_ComfyUI_nodes"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
-PublisherId = ""
+PublisherId = "ducido"
 DisplayName = "ObjectFusion_ComfyUI_nodes"
 Icon = ""
